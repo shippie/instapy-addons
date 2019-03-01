@@ -88,7 +88,7 @@ public class Jsplit implements CommandLineRunner {
   }
 
   private Path createOutputFile(final Path sourceFileName, final String infix) {
-    log.info(
+    log.debug(
         "Filename created from sourcefilename {} and infix {}", sourceFileName.getParent(), infix);
     final String sourceFileNameStr = sourceFileName.getFileName().toString();
     final String sourceFileNameBasicStr = StringUtils.substringBeforeLast(sourceFileNameStr, ".");
@@ -97,7 +97,7 @@ public class Jsplit implements CommandLineRunner {
         MessageFormat.format(
             "{0}_{1}.{2}",
             sourceFileNameBasicStr, StringUtils.trimToEmpty(infix), sourceFileNameExtStr);
-    log.info("Create Filename {}", destFileNameStr);
+    log.debug("Create Filename {}", destFileNameStr);
     if (sourceFileName.getParent() == null) return Paths.get(".", destFileNameStr);
     else return sourceFileName.getParent().resolve(destFileNameStr);
   }
