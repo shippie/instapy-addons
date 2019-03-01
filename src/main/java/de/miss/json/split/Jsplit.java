@@ -74,7 +74,8 @@ public class Jsplit implements CommandLineRunner {
 
     try {
       log.info(
-          "Generated\n{}", mapper.writerWithDefaultPrettyPrinter().writeValueAsString(arrayNode));
+          "Generated JSON output\n{}",
+          mapper.writerWithDefaultPrettyPrinter().writeValueAsString(arrayNode));
       log.info("Write chunk data to {}", pOutput.toFile().getAbsolutePath());
       Files.writeString(
           pOutput,
