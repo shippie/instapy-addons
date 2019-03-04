@@ -81,7 +81,8 @@ public class Jsplit implements CommandLineRunner {
           pOutput,
           mapper.writeValueAsString(arrayNode),
           StandardCharsets.US_ASCII,
-          StandardOpenOption.TRUNCATE_EXISTING);
+          StandardOpenOption.TRUNCATE_EXISTING,
+          StandardOpenOption.CREATE);
     } catch (final IOException e) {
       e.printStackTrace();
     }
