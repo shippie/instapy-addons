@@ -1,3 +1,8 @@
+Inline-style: 
+![alt text](https://travis-ci.com/shippie/jsplit.svg?branch=master "Build Status")
+
+
+
 **Instapy Collection helps managing your relationship files.**
 
 Needs Java 11 - runs with Spring Boot 2.
