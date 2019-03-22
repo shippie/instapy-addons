@@ -6,6 +6,9 @@ import org.springframework.stereotype.Component;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.text.MessageFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -39,6 +42,13 @@ public class JDistinctImpl implements JDistinct {
       for (final String objNode : distincted) {
         log.info("Distinct Node Text: {}", objNode);
       }
+
+      final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
+      final Path fout =
+          Paths.get(
+              MessageFormat.format(
+                  "{0}~distinct~{1}.json", simpleDateFormat.format(new Date()), distincted.size()));
+      this.jsonIO.writeToOutputfile(this.jsonIO.createOutputFile(fout, "0"), distincted);
 
     } catch (final Exception e) {
       log.error("Error,{} ", e);
