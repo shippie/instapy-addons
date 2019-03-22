@@ -23,3 +23,9 @@
 /nbdist/
 /.nb-gradle/
 /build/
+
+/.json
+/input-2.json
+/input_0.json
+/input_1.json
+/input_2.json
