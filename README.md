@@ -1,4 +1,3 @@
-Inline-style: 
 ![alt text](https://travis-ci.com/shippie/jsplit.svg?branch=master "Build Status")
 
 
